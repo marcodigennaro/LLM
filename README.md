@@ -35,7 +35,9 @@ jupyter-lab
    2. RoBERTa (Transformer)
    3. Transformers Pipelines
 
-![Distribution of solutions for wind/solar production](https://github.com/marcodigennaro/optimization/blob/main/optimization/images/renewables.jpeg)
+![VADER vs RoBERTa](https://github.com/marcodigennaro/LLM/blob/main/llm/images/vader_vs_roberta.jpeg)
+![Accuracy](https://github.com/marcodigennaro/LLM/blob/main/llm/images/confusion_matrix.jpeg)
+
 
 ### Author
 
