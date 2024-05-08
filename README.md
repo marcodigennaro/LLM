@@ -35,8 +35,8 @@ jupyter-lab
    2. RoBERTa (Transformer)
    3. Transformers Pipelines
 
-![VADER vs RoBERTa](https://github.com/marcodigennaro/LLM/blob/main/llm/images/vader_vs_roberta.jpeg =500x300)
-![Accuracy](https://github.com/marcodigennaro/LLM/blob/main/llm/images/confusion_matrix.jpeg =500x300)
+![VADER vs RoBERTa](https://github.com/marcodigennaro/LLM/blob/main/llm/images/vader_vs_roberta.jpeg){ width: 500px; height: 300px; }
+![Accuracy](https://github.com/marcodigennaro/LLM/blob/main/llm/images/confusion_matrix.jpeg){ width: 500px; height: 300px; }
 
 
 ### Author
