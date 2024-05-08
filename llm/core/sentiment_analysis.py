@@ -50,6 +50,8 @@ def polarity_scores_roberta(token, tokenizer, model):
     return dict(roberta_neg=scores[0], roberta_neu=scores[1], roberta_pos=scores[2])
 
 
+import pandas as pd
+
 def map_scores(row: pd.Series, model: str) -> int:
     """
     Maps sentiment scores from -1 to 1 scale into an integer scale of 1 to 5 based on the model.
@@ -76,9 +78,11 @@ def map_scores(row: pd.Series, model: str) -> int:
         net_score = row['vader_pos'] - row['vader_neg']
 
     # Normalize this score to a 1-5 scale
-    # net_score ranges from -1 to 1, we translate this to 0 to 2
-    scaled_score = (net_score + 1) * 2
-    # Convert 0-4 scale to 1-5 scale
-    final_score = int(scaled_score / 4 * 5) + 1
+    # net_score ranges from -1 to 1; map this to a 0 to 4 scale
+    scaled_score = (net_score + 1) * 2  # This ranges from 0 to 4
+
+    # To distribute evenly across 1 to 5, we need to handle the rounding carefully.
+    # Mapping 0 to 4 linearly to 1 to 5 can be done by rounding the scaled score, then adding 1
+    final_score = round(scaled_score / 4 * 4) + 1
 
     return final_score

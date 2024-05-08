@@ -1,21 +1,10 @@
 import pytest
 import pandas as pd
-from llm.shared.shared_utils import basic_token
+from llm.shared.shared_utils import basic_token, normal_cases, edge_cases
 from llm.core.sentiment_analysis import polarity_scores_roberta  # Ensure your function is in 'your_module'
 from llm.core.sentiment_analysis import map_scores
 from transformers import AutoTokenizer
 from transformers import AutoModelForSequenceClassification
-
-# Fixture to create sample data for different models
-@pytest.fixture
-def sample_data():
-    data = {
-        'roberta_pos': [0.6, -0.3, 0.0],
-        'roberta_neg': [0.2, -0.6, 0.1],
-        'vader_pos': [0.8, -0.4, 0.1],
-        'vader_neg': [0.1, -0.5, 0.2]
-    }
-    return pd.DataFrame(data)
 
 @pytest.fixture
 def roberta_setup():
@@ -31,6 +20,13 @@ def token_setup():
     # Create token
     return basic_token()
 
+@pytest.fixture
+def sample_data():
+    return normal_cases()
+
+@pytest.fixture
+def boundary_data():
+    return edge_cases()
 
 def test_polarity_scores_roberta(roberta_setup, token_setup):
     tokenizer, model = roberta_setup
@@ -62,17 +58,13 @@ def test_invalid_model(sample_data):
         map_scores(sample_data.iloc[0], 'bert')
 
 
-def test_edge_cases(sample_data):
+def test_edge_cases(boundary_data):
     # Testing boundary conditions
     # Assuming net_score at boundaries -1 and 1
-    edge_cases = pd.DataFrame({
-        'roberta_pos': [1, -1],
-        'roberta_neg': [0, 0],
-        'vader_pos': [1, -1],
-        'vader_neg': [0, 0]
-    })
+    print(boundary_data)
+    print(map_scores(boundary_data.iloc[0], model='roberta'))
     # For net_score = 1 (max boundary)
-    assert map_scores(edge_cases.iloc[0], 'roberta') == 5, "Expected maximum score 5 at upper boundary"
+    assert map_scores(boundary_data.iloc[0], 'roberta') == 5, "Expected maximum score 5 at upper boundary"
     # For net_score = -1 (min boundary)
-    assert map_scores(edge_cases.iloc[1], 'roberta') == 1, "Expected minimum score 1 at lower boundary"
+    assert map_scores(boundary_data.iloc[1], 'roberta') == 1, "Expected minimum score 1 at lower boundary"
 
