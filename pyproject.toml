@@ -6,9 +6,12 @@ authors = ["Marco Di Gennaro <m.di.gennaro@outlook.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
+jupyterlab = "^4.2.0"
+jupyterlab-execute-time = "^3.1.2"
+matplotlib = "^3.8.4"
+pytest = "^8.2.0"
+pre-commit = "^3.7.0"
+coverage = "^7.5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
