@@ -1,6 +1,54 @@
 # LLM
 A package demonstrating model implementation and deployment for solving practical problems. 
 
+## Getting Started
+
+### Get the package
+
+```
+# Navigate to your local folder
+cd /your/local/folder
+
+# Clone the WindML repository
+git clone git@github.com:marcodigennaro/LLM.git
+
+# Enter the folder
+cd LLM/
+
+# Create the python environment from the pyproject.toml file
+poetry install
+
+# Activate the python environment
+source .venv/bin/activate
+
+# Run tests 
+poetry run pytest -v
+
+# Start Jupyter Lab
+jupyter-lab  
+```
+
+### Content of the Jupyter Notebooks
+
+1. `sentiment_analysis` shows three strategies for sentiment analysis on a database of amazon reviews 
+   1. VADER (bag of words)
+   2. RoBERTa (Transformer)
+   3. Transformers Pipelines
+
+![Distribution of solutions for wind/solar production](https://github.com/marcodigennaro/optimization/blob/main/optimization/images/renewables.jpeg)
+
+### Author
+
+Marco Di Gennaro 
+- [CV](https://github.com/marcodigennaro/CV/blob/main/MDG_CV.pdf)
+- [GitHub](https://github.com/marcodigennaro)
+- [Linkedin](https://www.linkedin.com/in/marcodig/)
+- [Website](https://atomistic-modelling.com/)
+
+### License
+
+This project is licensed under the GPL v3 License - see the [LICENSE.md](https://github.com/marcodigennaro/WindML/blob/main/LICENSE.md) file for details
+
 
 ### Acknowledgments
 
