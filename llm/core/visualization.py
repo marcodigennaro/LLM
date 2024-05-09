@@ -1,9 +1,6 @@
 from sklearn.manifold import MDS, Isomap, TSNE
 import matplotlib.pyplot as plt
 
-import numpy as np
-
-
 def map_labels_to_colors(labels):
     # Define a color for each category
     color_map = {
@@ -59,16 +56,17 @@ def plot_embeddings(embeddings_list, words, titles, colors):
         colors (list or str): Colors or a colormap for the points.
         :param annotate:
     """
-    plt.figure(figsize=(18, 6))
+    fig, ax = plt.subplots(1,3, figsize=(18, 6))
     for i, (embed, title) in enumerate(zip(embeddings_list, titles)):
-        plt.subplot(1, 3, i + 1)
-        plt.scatter(embed[:, 0], embed[:, 1], c=colors, cmap='RdYlGn')
 
+        ax[i].scatter(embed[:, 0], embed[:, 1], c=colors, cmap='RdYlGn')
         for j, (w,c) in enumerate(zip(words, colors)):
             if abs(c) > 0.1:
-                plt.annotate(w, (embed[j, 0], embed[j, 1]), fontsize=10)
-        plt.title(title)
-        plt.xlabel('z1')
-        plt.ylabel('z2')
+                ax[i].annotate(w, (embed[j, 0], embed[j, 1]), fontsize=10)
+        ax[i].set_title(title)
+        ax[i].set_xlabel('z1')
+        ax[i].set_ylabel('z2')
+
     plt.tight_layout()
-    plt.show()
+
+    return fig
