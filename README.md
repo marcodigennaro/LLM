@@ -41,7 +41,7 @@ jupyter-lab
 
 ![VADER vs RoBERTa](https://github.com/marcodigennaro/LLM/blob/main/llm/images/vader_vs_roberta.jpeg)
 ![Accuracy](https://github.com/marcodigennaro/LLM/blob/main/llm/images/confusion_matrix.jpeg)
-![Prometheus][https://github.com/marcodigennaro/LLM/blob/main/llm/images/prometheo.jpeg]
+![Prometheus](https://github.com/marcodigennaro/LLM/blob/main/llm/images/prometheo.jpeg)
 
 ### Author
 
