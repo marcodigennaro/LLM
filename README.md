@@ -53,4 +53,5 @@ This project is licensed under the GPL v3 License - see the [LICENSE.md](https:/
 
 ### Acknowledgments
 
-- (Rob Mulla)[https://www.youtube.com/watch?v=QpzMWQvxXWk&t=129s]
+- [Aurélien Géron's Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)
+- [Rob Mulla web series](https://www.youtube.com/watch?v=QpzMWQvxXWk&t=129s)
