@@ -48,7 +48,7 @@ def apply_tsne(embeddings, perplexity=False):
     return embeddings_tsne
 
 
-def plot_embeddings(embeddings_list, words, titles, colors, annotate=False):
+def plot_embeddings(embeddings_list, words, titles, colors):
     """
     Plots the results of dimensionality reductions.
 
@@ -62,10 +62,11 @@ def plot_embeddings(embeddings_list, words, titles, colors, annotate=False):
     plt.figure(figsize=(18, 6))
     for i, (embed, title) in enumerate(zip(embeddings_list, titles)):
         plt.subplot(1, 3, i + 1)
-        plt.scatter(embed[:, 0], embed[:, 1], c=colors, cmap='coolwarm')
-        if annotate:
-            for j, word in enumerate(words):
-                plt.annotate(word, (embed[j, 0], embed[j, 1]), fontsize=8)
+        plt.scatter(embed[:, 0], embed[:, 1], c=colors, cmap='RdYlGn')
+
+        for j, (w,c) in enumerate(zip(words, colors)):
+            if abs(c) > 0.1:
+                plt.annotate(w, (embed[j, 0], embed[j, 1]), fontsize=10)
         plt.title(title)
         plt.xlabel('z1')
         plt.ylabel('z2')
