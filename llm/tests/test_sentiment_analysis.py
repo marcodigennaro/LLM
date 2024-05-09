@@ -1,5 +1,4 @@
 import pytest
-import pandas as pd
 from llm.shared.shared_utils import basic_token, normal_cases, edge_cases
 from llm.core.sentiment_analysis import polarity_scores_roberta  # Ensure your function is in 'your_module'
 from llm.core.sentiment_analysis import map_scores

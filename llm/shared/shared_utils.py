@@ -1,4 +1,6 @@
 import pandas as pd
+from llm.config import DATA_DIR
+from llm.core.functions import read_text_file
 
 
 def basic_token():
@@ -22,3 +24,8 @@ def edge_cases():
         'vader_pos': [1, -1],
         'vader_neg': [0, 0]
     })
+
+
+def sample_text():
+    return "TensorFlow is a platform for ML-powered applications. TensorFlow is a open source project."
+
