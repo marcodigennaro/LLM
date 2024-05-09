@@ -35,9 +35,13 @@ jupyter-lab
    2. RoBERTa (Transformer)
    3. Transformers Pipelines
 
+2. `RNN` demonstrate how to use a basic RNN as LLM
+   1. Reads a text (Prometheus's) legend and predict the continuation of the story
+   2. Uses MDS, Isomaps and t-SNE representations to project the results onto a 2D space
+
 ![VADER vs RoBERTa](https://github.com/marcodigennaro/LLM/blob/main/llm/images/vader_vs_roberta.jpeg)
 ![Accuracy](https://github.com/marcodigennaro/LLM/blob/main/llm/images/confusion_matrix.jpeg)
-
+![https://github.com/marcodigennaro/LLM/blob/main/llm/images/prometheo.jpeg]
 
 ### Author
 
