@@ -130,7 +130,7 @@ def create_rnn_model(vocab_size: int) -> Sequential:
         >>> input_model.summary()
     """
     model = Sequential()
-    model.add(Embedding(input_dim=vocab_size, output_dim=50))
+    model.add(Embedding(input_dim=vocab_size, output_dim=100))
     model.add(SimpleRNN(100))
     model.add(Dense(vocab_size, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
